@@ -11,13 +11,16 @@
  */
 Namespace Math
 {
+  /**
+   * Behold, Science....!
+   */
   Class RemoveIntFromInArray
   {
     protected $num  = [],
               $len  = 0,
-              $n    = false;
+              $n    = 0;
 
-    public function __construct(array $num, $n)
+    public function __construct(array $num, int $n)
     {
       $this->num = $num;
       $this->len = count($num);
@@ -26,11 +29,9 @@ Namespace Math
 
     public function removeInstances()
     {
-      $a = $this->num;
-      if (empty($this->num) || $this->len < 1 || ! $this->n) return;
+      $a = $this->num; if (empty($a) || $this->len < 1 || ! $this->n) return;
 
-      $i = 0;
-      for ($j=0;$j<$this->len;$j++) if ($a[$j] != $this->n) $a[$i++] = $a[$j];
+      $i = 0; for ($j=0;$j<$this->len;$j++) if ($a[$j] != $this->n) $a[$i++] = $a[$j];
 
       return $i; //new dim of arr.
     }
