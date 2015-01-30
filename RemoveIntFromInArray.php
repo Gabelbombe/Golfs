@@ -20,7 +20,7 @@ Namespace Math
               $len  = 0,
               $n    = 0;
 
-    public function __construct(array $num, int $n)
+    public function __construct(array $num, $n)
     {
       $this->num = $num;
       $this->len = count($num);
@@ -43,5 +43,5 @@ Namespace //empty so no scoping conflicts
   USE \Math\RemoveIntFromInArray AS RFA;
 
   $RFA = New RFA([4, 3, 2, 1, 2, 3, 6], 2);
-  echo "\n--> {$RFA->removeInstances()} \n";
+  echo "\n--> {$RFA->removeInstances()}\n\n";
 }
