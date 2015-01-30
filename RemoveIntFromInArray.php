@@ -24,31 +24,13 @@ Namespace Math
       $this->n   = $n;
     }
 
-    public function remove1()
-    {
-      if (empty($this->num) || $this->len < 1 || ! $this->n) return;
-      $a = $b = $c = $this->num;
-
-      while ($a < $b)
-      {
-        while ($a != $this->n && count($a - $c) < $this->len) ++$a;
-        while ($b == $this->n && count($b - $c) > 0)          --$a;
-        if ($a < $b)
-        {
-          $a = $b;
-          $b = $this->n;
-        }
-      }
-      return ($a - $c);
-    }
-
-    public function remove2()
+    public function removeInstances()
     {
       $a = $this->num;
       if (empty($this->num) || $this->len < 1 || ! $this->n) return;
 
       $i = 0;
-      for ($j=0;$j<$len;$j++) if ($a[$j] != $n) $a[$i++] = $a[$j];
+      for ($j=0;$j<$this->len;$j++) if ($a[$j] != $this->n) $a[$i++] = $a[$j];
 
       return $i; //new dim of arr.
     }
@@ -59,7 +41,6 @@ Namespace //empty so no scoping conflicts
 {
   USE \Math\RemoveIntFromInArray AS RFA;
 
-  $testbed = New RFA([4, 3, 2, 1, 2, 3, 6], 2);
-  print_r($testbed->remove1());
-  print_r($testbed->remove2());
+  $RFA = New RFA([4, 3, 2, 1, 2, 3, 6], 2);
+  echo "\n--> {$RFA->removeInstances()} \n";
 }
